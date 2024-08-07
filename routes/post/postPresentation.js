@@ -2,6 +2,11 @@ import Presentation from "../../schemes/presentation.js";
 
 export default async function addPresentation(req , res) {
     try {
+        const { Title } = req.body;
+        if (await Presentation.findOne({ Title: Title })) {
+            res.status(400).json({error: "Presentation with this title already exists"});
+            return;
+        }
         const newPresentation = await Presentation.create(req.body);
         res.status(201).json(newPresentation);
         console.log("Added Presentation");

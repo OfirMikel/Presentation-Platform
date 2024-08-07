@@ -7,7 +7,7 @@ import Presentation from "../../schemes/presentation.js";
  */
 export default async function getAllPresentations(res) {
     try {
-        const presentations = await Presentation.find({});
+        const presentations = await Presentation.find();
         res.status(200).json(presentations);
         console.log("received all presentations");
     } catch (err) {
