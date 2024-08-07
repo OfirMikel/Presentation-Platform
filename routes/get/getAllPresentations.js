@@ -1,5 +1,4 @@
-import Presentation from "../../schemes/presentation.js";
-import Slide from "../../schemes/slide.js";
+import Presentation from "../../models/Presentation.js";
 
 /**
  *

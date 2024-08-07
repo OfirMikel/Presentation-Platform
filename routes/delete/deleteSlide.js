@@ -1,4 +1,4 @@
-import Slide from "../../schemes/slide.js";
+import Slide from "../../models/Slide.js";
 
 
 export default async function deleteSlide(req, res) {

@@ -1,4 +1,4 @@
-import Presentation from "../../schemes/presentation.js";
+import Presentation from "../../models/Presentation.js";
 
 export default async function deletePresentation(req, res) {
     const Title = req.params.title;

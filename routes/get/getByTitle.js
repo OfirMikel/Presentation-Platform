@@ -1,5 +1,5 @@
-import Presentation from "../../schemes/presentation.js";
-import Slide from "../../schemes/slide.js";
+import Presentation from "../../models/Presentation.js";
+import Slide from "../../models/Slide.js";
 
 export default async function getByTitle(req, res) {
         try {

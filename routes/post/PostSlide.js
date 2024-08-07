@@ -1,5 +1,5 @@
-import Slide from "../../schemes/slide.js";
-import Presentation from "../../schemes/presentation.js";
+import Slide from "../../models/Slide.js";
+import Presentation from "../../models/Presentation.js";
 
 export default async function addSlide(req, res) {
     let {presentation, content, style} = req.body;
