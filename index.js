@@ -1,13 +1,14 @@
 import express from 'express';
 import mongoose from 'mongoose';
-
+import dotenv from 'dotenv';
 import routes from "./routes/routes.js";
+
+dotenv.config();
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json()); //adding the body parsing for post request
-
-mongoose.connect(`mongodb://127.0.0.1:27017/project`)
+mongoose.connect(`${process.env.MONGO_URI}`, {})
     .then(() =>
         app.listen(port, () => {
             console.log(`Server is running at http://localhost:${port}`);

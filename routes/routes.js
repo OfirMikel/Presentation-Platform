@@ -23,6 +23,7 @@ export default function routes (app){
     app.post('/slide', async (req, res) => {
         await addSlide(req,res);
     })
+
     app.patch('/presentation/authors/:title', async (req, res) => {
         await alterAuthors(req,res);
     })
@@ -38,5 +39,4 @@ export default function routes (app){
     app.delete('/slide/:id', async (req, res) => {
         await deleteSlide(req,res);
     })
-
 }
