@@ -1,6 +1,5 @@
 import Presentation from "../../schemes/presentation.js";
 
-
 export default async function getByTitle(req, res) {
         try {
             const presentation = await Presentation.findOne({Title: req.params.title});
@@ -10,4 +9,3 @@ export default async function getByTitle(req, res) {
             res.status(500).json({ error: err.message });
         }
 }
-

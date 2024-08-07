@@ -4,6 +4,8 @@ import addSlide from "./post/postSlide.js";
 import getByTitle from "./get/getByTitle.js";
 import alterAuthors from "./patch/patchAuthors.js";
 import alterSlide from "./patch/patchSlide.js";
+import deletePresentation from "./delete/deletePresentation.js";
+import deleteSlide from "./delete/deleteSlide.js";
 
 export default function routes (app){
     app.get('/presentations', async (req, res) => {
@@ -28,4 +30,13 @@ export default function routes (app){
     app.patch('/slide/:id', async (req, res) => {
         await alterSlide(req,res);
     })
+
+    app.delete('/presentation/:title', async (req, res) => {
+        await deletePresentation(req,res);
+    })
+
+    app.delete('/slide/:id', async (req, res) => {
+        await deleteSlide(req,res);
+    })
+
 }
