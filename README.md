@@ -18,7 +18,8 @@ A Home Assignment given, creating a Server-Side Service for Presentation Platfor
 
 ## Features
 - Creating a New Presentation   
-- Fetch a Presentation by Title (Title is unique)
+- [Fetch a Presentation by Title (Title is unique)](#get-presentations)
+
 - Adding a Slide to a Presentation
 - Altering a Slide - Altering the Authors List 
 - Deleting a Slide 
@@ -130,7 +131,8 @@ Disclaimer **yourdbname** is the db name that u should provide
 
 ### Presentation
 
-- **GET /presentations**: Get all presentation | expected output structure:
+- #### GET /presentations
+- Get all presentation | expected output structure:
 - ![img.png](assets/allPresentations.png) 
 - **GET /presentations/:title**: Get presentation by Title | expected output structure:
 - ![img.png](assets/getPresentation.png)
