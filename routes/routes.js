@@ -44,7 +44,4 @@ export default function routes (app){
         await deleteSlide(req,res);
     })
 
-    app.get(`/`, (req , res) => {
-        console.log("sdfsdfsdfs")
-    } )
 }
