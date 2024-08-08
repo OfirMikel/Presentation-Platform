@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "dac284bb-e6e3-45a7-ac3c-2c29ed6c2ef7",
 		"name": "Home Assignment",
-		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"description": "#### **Configuring the Request**\n\n- **Set the HTTP Method**: Select the desired HTTP method (GET, POST, PUT, DELETE, etc.) from the dropdown next to the URL field.\n    \n- **Enter the URL**: Type the URL of the API endpoint you want to test.\n    \n- **Add Parameters** (if needed):\n    \n    - **Query Parameters**: Click on the \"Params\" tab to add query parameters to the URL.\n        \n    - **Path Variables**: Use curly braces `{}` in the URL for dynamic path segments (e.g., `/users/{id}`).\n        \n- **Set Headers**: Click on the \"Headers\" tab to add custom headers required by the API (e.g., `Content-Type`, `Authorization`).\n    \n\n#### **Providing Request Body**\n\n- **For POST/PUT Requests**:\n    \n    - Click on the \"Body\" tab.\n        \n    - Choose the format for the request body (e.g., `raw`, `form-data`, `x-www-form-urlencoded`).\n        \n    - Enter the request payload. For `raw`, you can select JSON, XML, or other formats from the dropdown.\n        \n\n#### **Sending the Request**\n\n- **Click \"Send\"**: After configuring your request, click the \"Send\" button to submit the request to the API.\n    \n\n#### **Inspecting the Response**\n\n- **View Response**: The response from the server will appear in the lower section of the Postman interface.\n    \n    - **Status Code**: Check the HTTP status code to see if the request was successful (e.g., 200 OK, 404 Not Found).\n        \n    - **Response Body**: View the response body, which can be in JSON, or plain text.\n        \n    - **Headers**: Inspect the response headers for additional information (e.g., content type, caching).",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "29446770"
 	},
@@ -68,7 +68,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"Title\": \"alorha\",\n    \"AuthorsList\": [\"gdf\" , \"sdf\"],\n    \"DatePublished\": \"2024-08-07T00:00:00Z\"\n}",
+					"raw": "{\n\t\"Title\": \"Home Assignment\",\n    \"AuthorsList\": [\"ofir mikel\" , \"alin alin\"],\n    \"DatePublished\": \"2024-08-07T00:00:00Z\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -87,7 +87,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"presentation\": \"ofir\",\r\n    \"content\": \"Hello World\",\r\n    \"style\": {\r\n        \"fontSize\": 2,\r\n        \"fontColor\": \"#000000\",\r\n        \"fontWeight\": \"bold\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"presentation\": \"Home Assignment\",\r\n    \"content\": \"Hello World\",\r\n    \"style\": {\r\n        \"fontSize\": 2,\r\n        \"fontColor\": \"#000000\",\r\n        \"fontWeight\": \"bold\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -206,13 +206,13 @@
 			"response": []
 		},
 		{
-			"name": "Patch Authors",
+			"name": "alter Authors",
 			"request": {
 				"method": "PATCH",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"AuthorsList\": [\"gdf\" , \"sdf\" , \"dfjksklff\" , \"sdfsdf\",\"sdfsdf\"]\r\n}",
+					"raw": "{\r\n    \"AuthorsList\": [\"sks\" ,\"sfdfg\" , \"gfgfdg\"]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -240,9 +240,9 @@
 			"response": []
 		},
 		{
-			"name": "Patch Slide",
+			"name": "alterSlide",
 			"request": {
-				"method": "PATCH",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -265,7 +265,7 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": "66b3850b101e8cd3604e7ecb"
+							"value": "66b3c032b7c7e62e5866f886"
 						}
 					]
 				}

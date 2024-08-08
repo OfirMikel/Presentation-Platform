@@ -1,6 +1,14 @@
 import Slide from "../../models/Slide.js";
 import Presentation from "../../models/Presentation.js";
 
+/**
+ * Adds a new slide to a specified presentation.
+ *
+ * @param req - The request object containing the slide data in `body`.
+ * @param res - The response object used to send the status and response message.
+ * @throws Error If the specified presentation does not exist or if the creation operation fails.
+ *
+ */
 export default async function addSlide(req, res) {
     let {presentation, content, style} = req.body;
     if (!presentation) {

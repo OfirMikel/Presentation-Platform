@@ -1,8 +1,4 @@
-Sure! Here's the updated README template with a "File Structure" section:
-
----
-
-# Project Name
+# Presentation Platform
 
 ## Table of Contents
 
@@ -18,17 +14,33 @@ Sure! Here's the updated README template with a "File Structure" section:
 
 ## Introduction
 
-A brief description of your project and its purpose.
+A Home Assignment given, creating a Server-Side Service for Presentation Platform.
 
 ## Features
-
-- Creating a New Presentation 
+- Creating a New Presentation   
 - Fetch a Presentation by Title (Title is unique)
 - Adding a Slide to a Presentation
 - Altering a Slide - Altering the Authors List 
 - Deleting a Slide 
 - Delete Presentation 
 - Get All Presentations
+
+## Objects
+
+- **Presentation obj contains:** 
+  - id(unique) 
+  - title(unique) 
+  - authorsList 
+  - datePublished
+- **Slide obj contains:** 
+  - id(unique)
+  - presentation 
+  - content  
+  - style(style is an object).
+- **style obj contains:** 
+  - fontSize 
+  - fontColor 
+  - fontWeight 
 
 ## Technologies
 
@@ -42,9 +54,11 @@ A brief description of your project and its purpose.
 ```
 presentation-platform/
 │
+├── assets/                            # Assets for Readme file
+│
 ├── models/
-│   └── Presentation.js           # Presentation model schema
-│   └── Slide.js                  # Slide model schema
+│   └── Presentation.js                # Presentation model schema
+│   └── Slide.js                       # Slide model schema
 │
 ├── routes/
 │   ├── delete
@@ -52,18 +66,19 @@ presentation-platform/
 │   │   └── deleteSlide.js             # methods for deleting a Slide
 │   ├── get
 │   │   └── getAllPresentions.js       # methods for reciving all Presentations
-│   │   └── getByTitle.js              # methods for reciving a specifc Presentation
+│   │   └── getPresentationByTitle.js  # methods for reciving a specifc Presentation
 │   ├── patch
-│   │   └── patchAuthors.js            # methods for changing a Presentation list of authors
-│   │   └── patchSlide.js              # methods for changing a Slide
+│   │   └── alterAuthors.js            # methods for changing a Presentation list of authors
+│   ├── put
+│   │   └── alterSlide.js              # methods for changing a Slide
 │   ├── post
-│   │   └── postPresentation.js        # methods for creating a new Presentation
+│   │   └── addPresentation.js         # methods for creating a new Presentation
 │   │   └── postSlide.js               # methods for creating a new Slide
 │   └── routes.js                      # registering routes for Presentation management
 │
-├── .env                               # Environment variables --only local--
+├── .env                               # Environment variables --only local need to be created when using the project.--
 ├── .gitignore                         # Git ignore file
-├── index.js                           # Express app setup
+├── app.js                             # Express app setup
 ├── test.postman_collection.json       # Express app setup
 ├── package.json                       # NPM dependencies and scripts
 └── README.md                          # Project documentation
@@ -76,6 +91,7 @@ presentation-platform/
     ```bash
     git clone https://github.com/OfirMikel/Presentation-Platform.git
     ```
+**Alternatively**, use the provided zip file and start from step 2.
 
 2. Navigate to the project directory:
 
@@ -88,8 +104,6 @@ presentation-platform/
     ```bash
     npm install
     ```
-
-**Alternatively**, use the provided zip file and start from step 2.
 
 ## Configuration
 
@@ -116,32 +130,40 @@ Disclaimer **yourdbname** is the db name that u should provide
 
 ### Presentation
 
-- **GET /presentations**: Get all presentation
-- **GET /presentations/:title**: Get presentation by Title
-- **POST /users**: Create a new presentation
+- **GET /presentations**: Get all presentation | expected output structure:
+- ![img.png](assets/allPresentations.png) 
+- **GET /presentations/:title**: Get presentation by Title | expected output structure:
+- ![img.png](assets/getPresentation.png)
+- **POST /presentation**: Create a new presentation
+- ![img.png](assets/addPresentation.png)
 - **PATCH /presentation/authors/:title**: Update a presentation author list by Title
+- ![img.png](assets/alterAuthors.png)
 - **DELETE /presentation/:title**: Delete a presentation by Title
-
+- ![img.png](assets/deletePresentation.png)
 ### Slide
 
 - **POST /slide**: Create a new slide
-- **PATCH /slide/:id**: Update a slide by ID 
+- ![img.png](assets/newSlide.png)
+- **PUT /slide/:id**: Update a slide by ID 
+- ![img.png](assets/alterSlide.png)
 - **DELETE /slide/:id**: Delete a slide by ID
+- ![img.png](assets/deleteSlide.png)
 
 ## Error Handling
 
 Standard error responses:
 
 - **400 Bad Request**: The request could not be understood or was missing required parameters.
-- **404 Not Found**: The DataBase wasn't found.
+- **500 Server Problems**: The DataBase wasn't found.
 
 ## TESTING
 I conducted multiple tests using Postman, MongoDB Compass, and the MongoDB Shell.
 therefore I provided the collection file for Postman.
-## Postman
+## Postman and MongoDB Compass
 1. Import Collection: Import the provided Postman collection (Assignment.postman_collection) into Postman.
 
 2. Environment Variables: Set up environment variables in Postman for base_url and other necessary variables.
 
 3. Run Requests: Execute requests to test API endpoints. Verify responses for correctness and expected behavior.
+![img.png](assets/testing.png)
 
