@@ -83,7 +83,7 @@ presentation-platform/
 ├── package.json                       # NPM dependencies and scripts
 └── README.md                          # Project documentation
 ```
-
+important files are `routes.js` , and the `js files in get, patch, put and post folders`
 ## Installation
 
 1. Clone the repository:
