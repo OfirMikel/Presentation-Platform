@@ -17,14 +17,14 @@
 A Home Assignment given, creating a Server-Side Service for Presentation Platform.
 
 ## Features
-- Creating a New Presentation   
-- [Fetch a Presentation by Title (Title is unique)](#get-presentations)
-
-- Adding a Slide to a Presentation
-- Altering a Slide - Altering the Authors List 
-- Deleting a Slide 
-- Delete Presentation 
-- Get All Presentations
+- [Creating a New Presentation](#post-presentation)   
+- [Fetch a Presentation by Title(Title is unique)](#get-presentationstitle)
+- [Adding a Slide to a Presentation](#post-slide)
+- [Altering a Slide](#put-slideid) 
+- [Altering the Authors List](#patch-presentationauthorstitle) 
+- [Deleting a Slide](#delete-slideid)
+- [Delete Presentation](#delete-presentationtitle) 
+- [Get All Presentations](#get-presentations)
 
 ## Objects
 
@@ -79,6 +79,8 @@ presentation-platform/
 │
 ├── .env                               # Environment variables --only local need to be created when using the project.--
 ├── .gitignore                         # Git ignore file
+├── Dockerfile                         # Dockerfile
+├── docker-compose.yaml                # docker configuration 
 ├── app.js                             # Express app setup
 ├── test.postman_collection.json       # Express app setup
 ├── package.json                       # NPM dependencies and scripts
@@ -86,6 +88,35 @@ presentation-platform/
 ```
 important files are `routes.js` , and the `js files in get, patch, put and post folders`
 ## Installation
+### Using Docker
+
+1. Ensure you have Docker installed on your machine. If not, download and install Docker from [here](https://www.docker.com/get-started).
+
+2. Clone the repository:
+
+    ```bash
+    git clone https://github.com/OfirMikel/Presentation-Platform.git
+    ```
+
+3. Navigate to the project directory:
+
+    ```bash
+    cd presentation-platform
+    ```
+
+4. Build and run the Docker containers:
+
+    ```bash
+    docker-compose up --build
+    ```
+
+  This command will build the Docker images for your Node.js application and MongoDB, and start the containers. 
+
+- MongoDB will be available at `mongodb://mongo:27017/yourdbname`.
+
+- The API will be available at `http://localhost:3000`.
+
+### Manual Installation
 
 1. Clone the repository:
 
@@ -134,21 +165,28 @@ Disclaimer **yourdbname** is the db name that u should provide
 - #### GET /presentations
 - Get all presentation | expected output structure:
 - ![img.png](assets/allPresentations.png) 
-- **GET /presentations/:title**: Get presentation by Title | expected output structure:
+- #### GET /presentations/:title
+- Get presentation by Title | expected output structure:
 - ![img.png](assets/getPresentation.png)
-- **POST /presentation**: Create a new presentation
+- #### POST /presentation
+- Create a new presentation | expected output structure:
 - ![img.png](assets/addPresentation.png)
-- **PATCH /presentation/authors/:title**: Update a presentation author list by Title
+- #### PATCH /presentation/authors/:title
+- Update a presentation author list by Title | expected output structure:
 - ![img.png](assets/alterAuthors.png)
-- **DELETE /presentation/:title**: Delete a presentation by Title
+- #### DELETE /presentation/:title
+- Delete a presentation by Title | expected output structure:
 - ![img.png](assets/deletePresentation.png)
 ### Slide
 
-- **POST /slide**: Create a new slide
+- #### POST /slide
+- Create a new slide | expected output structure:
 - ![img.png](assets/newSlide.png)
-- **PUT /slide/:id**: Update a slide by ID 
+- #### PUT /slide/:id
+- Update a slide by ID | expected output structure: 
 - ![img.png](assets/alterSlide.png)
-- **DELETE /slide/:id**: Delete a slide by ID
+- #### DELETE /slide/:id
+- Delete a slide by ID | expected output structure:
 - ![img.png](assets/deleteSlide.png)
 
 ## Error Handling
