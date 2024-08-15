@@ -10,7 +10,6 @@ import Slide from "../../models/Slide.js";
  */
 export default async function getPresentationByTitle(req, res) {
     const Title = req.params.title;
-
     if (!Title) {
         return res.status(400).send("Title is required");
     }

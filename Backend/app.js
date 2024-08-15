@@ -6,7 +6,7 @@ import routes from "./routes/routes.js";
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
-app.use(express.json()); //adding the body parsing for post request
+app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI, {})
     .then(() => {

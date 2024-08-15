@@ -1,6 +1,6 @@
 # npm
-node_modules
-package-lock.json
+Backend/node_modules
+Backend/package-lock.json
 
 #environment variables
 .env

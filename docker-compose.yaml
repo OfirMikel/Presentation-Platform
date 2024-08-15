@@ -18,6 +18,12 @@ services:
       - "3000:3000"
     depends_on:
       - mongo
+    env_file:
+      - .env
+    volumes:
+      - type: bind
+        source: .
+        target: /app
 
 volumes:
   mongo_data:
