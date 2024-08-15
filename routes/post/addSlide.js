@@ -14,7 +14,8 @@ export default async function addSlide(req, res) {
     if (!presentation) {
         return res.status(400).send("presentation title is required");
     }
-    if (!(await Presentation.findOne({ Title: presentation }))) {
+    let slidePresentation = await Presentation.findOne({ Title: presentation });
+    if (!slidePresentation) {
         return res.status(400).json({error: "Presentation with this title does not exists"});
     }
     if (!style) {
@@ -31,10 +32,16 @@ export default async function addSlide(req, res) {
         const newSlide = await Slide.create({
             presentation: presentation,
             content: content,
-            style: style
+            style: style,
+            page:slidePresentation.SlidesId.length + 1
         });
+        await Presentation.updateOne({Title: presentation}, {
+            $set: {
+                SlidesId: [...slidePresentation.SlidesId , newSlide.id ]
+            },
+        })
         res.status(201).json(newSlide);
-        console.log("Added Slice");
+        console.log("Added Slide");
     } catch (err) {
         res.status(400).json({error: err.message});
     }

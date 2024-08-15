@@ -8,6 +8,7 @@ const slideSchema =  new mongoose.Schema({
         "fontColor": String,
         "fontWeight": String
     },
+    page:Number
 })
 
 const Slide = mongoose.model('slide', slideSchema);

@@ -25,7 +25,8 @@ export default async function addPresentation(req, res) {
         const newPresentation = await Presentation.create({
             Title: Title,
             AuthorsList: AuthorsList,
-            DatePublished: DatePublished
+            DatePublished: DatePublished,
+            SlidesId: []
         });
         res.status(200).json(newPresentation);
         console.log("Added Presentation");
