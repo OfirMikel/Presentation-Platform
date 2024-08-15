@@ -1,0 +1,9 @@
+.text-exo2 {
+    font-family: "Exo 2", sans-serif;
+}
+
+.text-gradient {
+    background: -webkit-linear-gradient(#9f006a, #a90043);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

@@ -1,5 +1,5 @@
 import "./background.css"
-import '../index.css'
+import '../../index.css'
 interface BackgroundProps{
     children?: React.ReactNode;
     className?: string;

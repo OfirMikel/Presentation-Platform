@@ -1,7 +1,7 @@
 export interface Presentation{
-    PresentationId: string;
-    PresentationName: string;
+    id: string;
+    Title: string;
     AuthorsList: string[];
     DatePublished: Date;
-    SlidesId: number[];
+    SlidesId: string[];
 }
