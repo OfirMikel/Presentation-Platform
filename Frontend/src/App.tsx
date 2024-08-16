@@ -4,7 +4,7 @@ import SlidePage from "./pages/SlidePage.tsx";
 import EditSlide from "./pages/EditSlide.tsx";
 import AddSlide from "./pages/AddSlide.tsx";
 import {homePageLoader} from "./loaders/homePageLoader.ts";
-import Error from "./components/Error.tsx";
+import Error from "./components/Errors/Error.tsx";
 
 const router = createBrowserRouter([
         {

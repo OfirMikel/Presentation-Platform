@@ -6,5 +6,5 @@ export interface Presentation{
     AuthorsList: string[],
     DatePublished: Date,
     SlidesId: string[],
-    presentationSlides?: Slide[]
+    presentationSlides: Slide[]
 }

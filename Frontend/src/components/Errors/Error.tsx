@@ -1,8 +1,8 @@
 import React from 'react';
 import {NavLink, useNavigate, useRouteError} from "react-router-dom";
-import Background from "./background/Background.tsx";
-import TextExo2Font from "./typography/TextExo2Font.tsx";
-import image from "../assets/computer.png"
+import Background from "../background/Background.tsx";
+import TextExo2Font from "../typography/TextExo2Font.tsx";
+import image from "../../assets/computer.png"
 
 function Error() {
     return (

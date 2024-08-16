@@ -24,3 +24,27 @@ export async function getAllPresentations() {
         }
     }
 }
+
+
+export async function getPresentation(title:string){
+    try {
+        var requestOptions = {
+            method: 'GET',
+        };
+        const res = await fetch(`${base_url}/presentation/${title}` , requestOptions);
+        if (!res.ok) {
+            const errorText = await res.text();
+            throw new Error(`Error ${res.status}: ${errorText}`);
+        }
+        return await res.json();
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error("Fetch error:", error.message);
+            throw new Error(`Failed to fetch presentations: ${error.message}`);
+        } else {
+            console.error("Unexpected error:", error);
+            throw new Error("An unexpected error occurred.");
+        }
+    }
+
+}
