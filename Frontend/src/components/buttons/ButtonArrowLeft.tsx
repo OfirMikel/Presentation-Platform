@@ -9,8 +9,8 @@ interface ButtonArrowLeftProps {
 function ButtonArrowLeft({className}: ButtonArrowLeftProps) {
     return (
         <div className="cursor-pointer ">
-            <img src={svgArrow}
-                 className={`${className} active:opacity-100 opacity-70 hover:opacity-80 duration-200 `} alt="button that looks like an arrow" />
+            <img src={svgArrow} className={`${className} active:scale-110 opacity-80 
+            hover:opacity-100 duration-100 rotate-180   `} alt="button that looks like an arrow"/>
         </div>
 
     );

@@ -14,7 +14,7 @@ function CardPresentation({presentation}: CardPresentationProps) {
         day: 'numeric',
     });
     return (
-        <div className="flex flex-row bg-white rounded-3xl h-[200px]  drop-shadow-lg min-w-[32rem] ">
+        <div className="flex flex-row bg-white justify-between rounded-3xl h-[200px]  drop-shadow-lg min-w-[32rem] ">
             <div className="flex flex-col p-8 ">
                 <TextExo2Font className="text-2xl font-bold">{presentation.Title}</TextExo2Font>
                 <TextExo2Font className="">{`DatePublished: ${formatedDate}`}</TextExo2Font>

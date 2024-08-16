@@ -1,6 +1,6 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Home from "./pages/Home.tsx";
-import Slide from "./pages/Slide.tsx";
+import SlidePage from "./pages/SlidePage.tsx";
 
 const router = createBrowserRouter([
         {
@@ -9,7 +9,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/presentation/:title/:page',
-            element: <Slide/>
+            element: <SlidePage/>
         }
     ]
 );

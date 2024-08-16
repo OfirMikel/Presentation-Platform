@@ -1,8 +1,9 @@
 export interface Slide {
     id: string,
-    presentation: string,
+    presentation: string | undefined,
     content: string,
-    style:Style
+    style:Style,
+    headline: string
 }
 
 interface Style {
