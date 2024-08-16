@@ -8,11 +8,7 @@ interface CardPresentationProps {
 }
 
 function CardPresentation({presentation}: CardPresentationProps) {
-    const formatedDate = presentation.DatePublished.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-    });
+    const formatedDate = presentation.DatePublished;
     return (
         <div className="flex flex-row bg-white justify-between rounded-3xl h-[200px]  drop-shadow-lg min-w-[32rem] ">
             <div className="flex flex-col p-8 ">

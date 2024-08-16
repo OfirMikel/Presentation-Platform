@@ -3,7 +3,8 @@ export interface Slide {
     presentation: string | undefined,
     content: string,
     style:Style,
-    headline: string
+    headline: string,
+    page: number
 }
 
 interface Style {
