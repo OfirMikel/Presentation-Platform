@@ -21,7 +21,6 @@ export default async function alterSlide(req, res) {
         }
         await Slide.updateOne({_id: id}, {
             $set: {
-                presentation: presentation || slideById.presentation,
                 content: content || slideById.content,
                 style: style || slideById.style,
                 headline: headline || slideById.headline

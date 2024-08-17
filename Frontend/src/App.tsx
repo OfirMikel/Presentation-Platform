@@ -1,11 +1,11 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Home from "./pages/Home.tsx";
 import SlidePage from "./pages/SlidePage.tsx";
-import EditSlide from "./pages/EditSlide.tsx";
-import AddSlide from "./pages/AddSlide.tsx";
 import {homePageLoader} from "./loaders/homePageLoader.ts";
 import Error from "./components/Errors/Error.tsx";
 import AddPresentation from "./pages/AddPresentation.tsx";
+import React from "react";
+import AddEditSlide from "./pages/AddEditSlide.tsx";
 
 const router = createBrowserRouter([
         {
@@ -19,12 +19,8 @@ const router = createBrowserRouter([
             element: <SlidePage/>
         },
         {
-            path: '/presentation/edit/:slideId',
-            element: <EditSlide/>
-        },
-        {
-            path: '/presentation/:title/add',
-            element: <AddSlide/>
+            path: '/presentation/:title/alter',
+            element: <AddEditSlide />,
         },
         {
             path: '/new_presentation',

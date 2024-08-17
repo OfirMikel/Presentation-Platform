@@ -12,7 +12,7 @@ services:
   api:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Backend/Dockerfile
     container_name: express-services
     ports:
       - "3000:3000"

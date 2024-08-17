@@ -1,12 +1,13 @@
 import trashSvg from "../../assets/Trash.svg"
 
 interface ButtonDeleteProps {
-    className?: string
+    className?: string,
+    onClick?: () => void
 }
 
-function DeleteButton({className}: ButtonDeleteProps) {
+function DeleteButton({className , onClick}: ButtonDeleteProps) {
     return (
-        <div className="cursor-pointer">
+        <div className="cursor-pointer" onClick={onClick}>
             <img src={trashSvg} className={className} alt="image of Trash - delete button"/>
         </div>
     );

@@ -1,5 +1,5 @@
 export interface Slide {
-    id: string,
+    _id: string,
     presentation: string | undefined,
     content: string,
     style:Style,

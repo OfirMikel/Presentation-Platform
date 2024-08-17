@@ -15,6 +15,7 @@ function Home() {
         return <Spinner/>;
     }
 
+
     return (
         <Background className=" overflow-y-scroll ">
             <div className="flex justify-center items-center">

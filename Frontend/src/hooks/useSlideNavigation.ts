@@ -9,6 +9,7 @@ interface UseSlideNavigation {
     loading: boolean;
     error: string | null;
     presentation: Presentation | null;
+    setPresentation: React.Dispatch<React.SetStateAction<Presentation | null>>;
 }
 
 export function useSlideNavigation(): UseSlideNavigation {
@@ -23,6 +24,7 @@ export function useSlideNavigation(): UseSlideNavigation {
             try {
                 setLoading(true);
                 const data = await getPresentation(title? title : "");
+                console.log(data)
                 setPresentation(data);
             } catch (err) {
                 setError("Failed to fetch presentation data.");
@@ -49,5 +51,6 @@ export function useSlideNavigation(): UseSlideNavigation {
         loading,
         error,
         presentation,
+        setPresentation
     };
 }

@@ -1,6 +1,7 @@
 import {NavigateFunction} from "react-router-dom";
-import {Presentation} from "../../types/presentation";
-import {Slide} from "../../types/slide.ts"; // Update paths accordingly
+import {Presentation} from "../types/presentation.ts";
+import {Slide} from "../types/slide.ts";
+import {deleteSlide} from "../services/slideApi.ts"; // Update paths accordingly
 
 export function goToNextSlide(
     presentation: Presentation,
@@ -34,4 +35,21 @@ export function goToPreviousSlide(
     }
     const prevPage = currentSlide.page - 1 < 0 ? presentation.presentationSlides.length : currentSlide.page - 1;
     navigate(`/presentation/${presentation.Title}/${prevPage}`, {state: {presentation}});
+}
+export async function handleDeleteSlide(currentSlide: Slide,
+                                 presentation:Presentation,
+                                 setPresentation: React.Dispatch<React.SetStateAction<Presentation | null>>) {
+    await deleteSlide(currentSlide);
+
+    const updatedSlides = presentation.presentationSlides.filter(slide => slide._id !== currentSlide._id);
+    const updatedSlidesId = presentation.SlidesId.filter(id => id !== currentSlide._id);
+
+    const updatedPresentation = {
+        ...presentation,
+        presentationSlides: updatedSlides,
+        SlidesId: updatedSlidesId,
+    };
+
+    setPresentation(updatedPresentation);
+
 }

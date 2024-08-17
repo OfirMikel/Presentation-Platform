@@ -86,3 +86,21 @@ export async function addPresentation(
         return false;
     }
 }
+
+export async function deletePresentation(presentation: Presentation , navigate: NavigateFunction) {
+    try {
+        const response = await fetch(`${base_url}/presentation/${presentation.Title}`, {
+            method: 'DELETE',
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to delete presentation');
+        }
+
+        navigate("/");
+
+    } catch (error) {
+        console.error('Error:', error);
+        alert(error);
+    }
+}

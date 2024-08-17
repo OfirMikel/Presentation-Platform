@@ -6,7 +6,7 @@ import ButtonNext from "./buttons/ButtonNext.tsx";
 import ButtonHome from "./buttons/ButtonHome.tsx";
 import Background from "./background/Background.tsx";
 import {Presentation} from "../types/presentation.ts";
-import {goToNextSlide, goToPreviousSlide} from "./utils/hundleButtons.ts";
+import {goToNextSlide, goToPreviousSlide} from "../utils/hundleButtons.ts";
 import {useNavigate} from "react-router-dom";
 
 interface StarterSlideProps {
@@ -23,7 +23,7 @@ function StarterSlide({presentation}: StarterSlideProps) {
             <div className="h-5/6 w-full flex flex-row justify-center items-center">
                 <ButtonPrevious
                     className="w-36"
-                    onClick={() => goToPreviousSlide(presentation! ,navigate ,null)}
+                    onClick={() => goToPreviousSlide(presentation!, navigate, null)}
                 />
                 <div
                     className="relative laptop:w-9/12 h-full gap-5 bg-white rounded-[3rem] border-2 border-black drop-shadow-5xl flex flex-col items-center justify-center">
@@ -31,22 +31,26 @@ function StarterSlide({presentation}: StarterSlideProps) {
                         <TextExo2Font
                             className="flex-auto text-center text-5xl">{presentation.Title}</TextExo2Font>
                     </div>
-                    <TextExo2Font className="text-3xl">Date: </TextExo2Font>
-                    <TextExo2Font >{presentation.DatePublished.toString()}</TextExo2Font>
                     <TextExo2Font className="text-3xl"> Authors: </TextExo2Font>
                     <div className=" justify-center items-center">
                         {Authors.map((author, index) =>
                             <TextExo2Font key={index} className={`flex-auto`}>{author}</TextExo2Font>
                         )}
                     </div>
+
+                    <TextExo2Font className="text-3xl">Date: </TextExo2Font>
+                    <TextExo2Font>{presentation.DatePublished.toString()}</TextExo2Font>
+
                     <ButtonAdd
-                        to={`/presentation/${presentation.Title}/add`}
+                        currentSlide={null}
+                        edit={false}
+                        to={`/presentation/${presentation.Title}/alter`}
                         className="laptop:absolute laptop:top-7 laptop:right-9 w-16 opacity-40 hover:opacity-80 active:opacity-100 duration-200 active:scale-110"/>
 
                 </div>
                 <ButtonNext
                     className="w-36"
-                    onClick={() => goToNextSlide(presentation!, navigate , null)}
+                    onClick={() => goToNextSlide(presentation!, navigate, null)}
                 />
             </div>
 
