@@ -8,9 +8,9 @@ export function goToNextSlide(
     navigate: NavigateFunction,
     currentSlide: Slide | null,
     setShowPopUp: React.Dispatch<React.SetStateAction<{ message: string, isOpen: boolean }>>,
-    handleShake: () => void
+    handleShake?: () => void
 ) {
-    if (!currentSlide && presentation.presentationSlides.length === 0) {
+    if (handleShake && !currentSlide && presentation.presentationSlides.length === 0) {
         setShowPopUp({isOpen: true, message: "There is no slide for the current presentation"});
         handleShake(); // Trigger shaking effect
         return;
@@ -30,9 +30,9 @@ export function goToPreviousSlide(
     navigate: NavigateFunction,
     currentSlide: Slide | null,
     setShowPopUp:React.Dispatch<React.SetStateAction<{message:string , isOpen:boolean}>>,
-    handleShake: () => void
+    handleShake?: () => void
 ) {
-    if (!currentSlide && presentation.presentationSlides.length === 0) {
+    if (handleShake && !currentSlide && presentation.presentationSlides.length === 0) {
         setShowPopUp({isOpen: true, message: "There is no slide for the current presentation"});
         handleShake(); // Trigger shaking effect
         return;
@@ -45,6 +45,7 @@ export function goToPreviousSlide(
     const prevPage = currentSlide.page - 1 < 0 ? presentation.presentationSlides.length : currentSlide.page - 1;
     navigate(`/presentation/${presentation.Title}/${prevPage}`, {state: {presentation}});
 }
+
 export async function handleDeleteSlide(currentSlide: Slide,
                                  presentation:Presentation,
                                  setPresentation: React.Dispatch<React.SetStateAction<Presentation | null>>) {

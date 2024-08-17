@@ -34,7 +34,7 @@ function SlidePage() {
             <div className="h-5/6 w-full flex flex-row justify-center items-center">
                 <ButtonPrevious
                     className="w-36 max-laptop:w-20 max-laptop:absolute max-laptop:top-1/2 z-10 max-laptop:left-0 max-laptop:-translate-y-1/2"
-                    onClick={() => goToPreviousSlide(presentation!, navigate, currentSlide , setShowPopUp)}
+                    onClick={() => goToPreviousSlide(presentation!, navigate, currentSlide , setShowPopUp )}
                 />
                 <div
                     className="relative w-full max-laptop:ml-2.5 max-laptop:mr-2.5 laptop:w-9/12 h-full bg-white rounded-[3rem] border-2 border-black
