@@ -2,10 +2,10 @@
 FROM node:18
 
 # Set the working directory
-WORKDIR ./
+WORKDIR ./app/Backend
 
 # Copy package.json and package-lock.json
-COPY package*.json ./
+COPY Backend/package*.json ./
 
 # Install dependencies
 

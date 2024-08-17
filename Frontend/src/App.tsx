@@ -5,6 +5,7 @@ import EditSlide from "./pages/EditSlide.tsx";
 import AddSlide from "./pages/AddSlide.tsx";
 import {homePageLoader} from "./loaders/homePageLoader.ts";
 import Error from "./components/Errors/Error.tsx";
+import AddPresentation from "./pages/AddPresentation.tsx";
 
 const router = createBrowserRouter([
         {
@@ -22,8 +23,12 @@ const router = createBrowserRouter([
             element: <EditSlide/>
         },
         {
-        path: '/presentation/add/:slideId',
-        element: <AddSlide/>
+            path: '/presentation/add/:slideId',
+            element: <AddSlide/>
+        },
+        {
+            path: '/new_presentation',
+            element: <AddPresentation/>
         }
     ]
 );

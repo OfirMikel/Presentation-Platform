@@ -1,3 +1,6 @@
+import {Presentation} from "../types/presentation.ts";
+import {NavigateFunction} from "react-router-dom";
+
 const base_url = "http://localhost:3000";
 
 
@@ -7,7 +10,7 @@ export async function getAllPresentations() {
             method: 'GET',
         };
 
-        const res = await fetch(`${base_url}/presentations` , requestOptions);
+        const res = await fetch(`${base_url}/presentations`, requestOptions);
         console.log(res)
         if (!res.ok) {
             const errorText = await res.text();
@@ -25,13 +28,12 @@ export async function getAllPresentations() {
     }
 }
 
-
-export async function getPresentation(title:string){
+export async function getPresentation(title: string) {
     try {
         var requestOptions = {
             method: 'GET',
         };
-        const res = await fetch(`${base_url}/presentation/${title}` , requestOptions);
+        const res = await fetch(`${base_url}/presentation/${title}`, requestOptions);
         if (!res.ok) {
             const errorText = await res.text();
             throw new Error(`Error ${res.status}: ${errorText}`);
@@ -47,4 +49,40 @@ export async function getPresentation(title:string){
         }
     }
 
+}
+
+export async function addPresentation(
+                                      newPresentation: Presentation,
+                                      navigate: NavigateFunction) {
+    try {
+        const res = await fetch(`${base_url}/presentation`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                Title:newPresentation.Title,
+                AuthorsList:newPresentation.AuthorsList
+            }),
+        });
+        console.log(res);
+        if (!res.ok) {
+            const errorData = await res.json();
+            if (errorData.error === "Presentation with this title already exists") {
+                alert('A presentation with this title already exists. Please choose a different title.');
+            } else {
+                throw new Error(errorData.error || 'Failed to submit presentation');
+            }
+            return;
+        }
+
+        alert('Presentation submitted successfully!');
+        navigate("/")
+        return true;
+
+    } catch (error) {
+        console.error('Error:', error);
+        alert(error);
+        return false;
+    }
 }

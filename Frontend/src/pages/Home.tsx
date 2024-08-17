@@ -2,12 +2,9 @@ import Background from "../components/background/Background.tsx";
 import TextExo2Font from "../components/typography/TextExo2Font.tsx";
 import {Presentation} from "../types/presentation.ts";
 import CardPresentation from "../components/cards/CardPresentation.tsx";
-import {NavLink, useLoaderData, useNavigation} from "react-router-dom";
+import {useLoaderData, useNavigation} from "react-router-dom";
 import ButtonNewPresentation from "../components/buttons/ButtonNewPresentation.tsx";
 import Spinner from "../components/Spinner.tsx";
-import DeleteButton from "../components/buttons/ButtonDelete.tsx";
-import ErrorSlide from "../components/Errors/ErrorSlide.tsx";
-import Error from "../components/Errors/Error.tsx";
 
 function Home() {
     const presentationTemplates: Presentation[] = useLoaderData();
@@ -19,7 +16,7 @@ function Home() {
     }
 
     return (
-        <Background className="h-dvw overflow-y-scroll ">
+        <Background className=" overflow-y-scroll ">
             <div className="flex justify-center items-center">
                 <div className="laptop:w-2/3 flex flex-col laptop:flex-row ">
                     <div

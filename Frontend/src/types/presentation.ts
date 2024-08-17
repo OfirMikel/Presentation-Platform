@@ -1,7 +1,7 @@
 import {Slide} from "./slide.ts";
 
 export interface Presentation{
-    id: string,
+    id?: string,
     Title: string,
     AuthorsList: string[],
     DatePublished: Date,

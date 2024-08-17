@@ -1,14 +1,11 @@
-import {useNavigate, useParams} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import Background from "../components/background/Background.tsx";
-import {useState} from "react";
 import ButtonNext from "../components/buttons/ButtonNext.tsx";
 import ButtonPrevious from "../components/buttons/ButtonPrevious.tsx";
-import {Slide} from "../types/slide.ts";
 import TextExo2Font from "../components/typography/TextExo2Font.tsx";
 import ButtonAdd from "../components/buttons/ButtonAdd.tsx";
 import ButtonDelete from "../components/buttons/ButtonDelete.tsx";
 import ButtonHome from "../components/buttons/ButtonHome.tsx";
-import {Presentation} from "../types/presentation.ts";
 import {useSlideNavigation} from "../hooks/useSlideNavigation.ts";
 import {goToNextSlide, goToPreviousSlide} from "../components/utils/hundleButtons.ts";
 import Spinner from "../components/Spinner.tsx";
@@ -16,7 +13,6 @@ import ErrorSlide from "../components/Errors/ErrorSlide.tsx";
 import StarterSlide from "../components/StarterSlide.tsx";
 
 function SlidePage() {
-
     const {currentSlide, presentation, loading, error} = useSlideNavigation();
     const navigate = useNavigate();
     if (loading) return <Spinner/>;
@@ -31,7 +27,7 @@ function SlidePage() {
             <div className="h-5/6 w-full flex flex-row justify-center items-center">
                 <ButtonPrevious
                     className="w-36"
-                    // onClick={() => goToPreviousSlide(currentPage, presentation!, navigate)}
+                    onClick={() => goToPreviousSlide( presentation!, navigate , currentSlide)}
                 />
                 <div
                     className="relative laptop:w-9/12 h-full bg-white rounded-[3rem] border-2 border-black drop-shadow-5xl flex flex-col items-center justify-center">
@@ -53,7 +49,7 @@ function SlidePage() {
                 </div>
                 <ButtonNext
                     className="w-36"
-                    // onClick={() => goToNextSlide(currentPage, presentation!, navigate)}
+                    onClick={() => goToNextSlide(presentation!, navigate , currentSlide)}
                 />
             </div>
 
