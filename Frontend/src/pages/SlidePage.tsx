@@ -37,11 +37,11 @@ function SlidePage() {
                         <TextExo2Font
                             className="flex-auto text-center text-5xl">{currentSlide.headline}</TextExo2Font>
                     </div>
-                    <div className="h-max overflow-y-scroll w-3/5 justify-center">
+                    <div className="h-max overflow-y-scroll mb-14 w-4/5 items-center justify-center">
                         <TextExo2Font
-                            className={`flex-auto text-${currentSlide.style.fontColor} font-${currentSlide.style.fontWeight}`}
+                            className={` flex-auto ${currentSlide.style.fontColor} ${currentSlide.style.fontWeight}`}
                         >
-                            {currentSlide.content}
+                            {`${currentSlide.style.fontColor} - ${currentSlide.style.fontWeight} - ${currentSlide.content}` }
                         </TextExo2Font>
                     </div>
                     <ButtonAlter

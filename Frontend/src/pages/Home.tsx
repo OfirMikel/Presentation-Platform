@@ -7,7 +7,7 @@ import ButtonNewPresentation from "../components/buttons/ButtonNewPresentation.t
 import Spinner from "../components/Spinner.tsx";
 
 function Home() {
-    const presentationTemplates: Presentation[] = useLoaderData();
+    const presentationTemplates = useLoaderData() as Presentation[];
     const navigation = useNavigation();
     const isLoading = navigation.state === "loading";
 

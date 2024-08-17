@@ -16,7 +16,11 @@ interface StarterSlideProps {
 function StarterSlide({presentation}: StarterSlideProps) {
     const Authors = presentation.AuthorsList;
     const navigate = useNavigate();
-
+    const formatedDate = new Date(presentation.DatePublished).toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+    });
     return (
         <Background className="flex flex-col justify-center items-center gap-5 relative">
             <TextExo2Font className="text-3xl">{`Opening Slide`}</TextExo2Font>
@@ -39,7 +43,7 @@ function StarterSlide({presentation}: StarterSlideProps) {
                     </div>
 
                     <TextExo2Font className="text-3xl">Date: </TextExo2Font>
-                    <TextExo2Font>{presentation.DatePublished.toString()}</TextExo2Font>
+                    <TextExo2Font>{formatedDate}</TextExo2Font>
 
                     <ButtonAdd
                         currentSlide={null}
