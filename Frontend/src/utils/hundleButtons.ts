@@ -6,11 +6,16 @@ import {deleteSlide} from "../services/slideApi.ts"; // Update paths accordingly
 export function goToNextSlide(
     presentation: Presentation,
     navigate: NavigateFunction,
-    currentSlide: Slide | null
+    currentSlide: Slide | null,
+    setShowPopUp: React.Dispatch<React.SetStateAction<{ message: string, isOpen: boolean }>>,
+    handleShake: () => void
 ) {
-    if(!currentSlide && presentation.presentationSlides.length === 0){
-        alert("No Presentation slides yet");
+    if (!currentSlide && presentation.presentationSlides.length === 0) {
+        setShowPopUp({isOpen: true, message: "There is no slide for the current presentation"});
+        handleShake(); // Trigger shaking effect
+        return;
     }
+
     if (!currentSlide) {
         navigate(`/presentation/${presentation.Title}/${1}`, {state: {presentation}});
         return;
@@ -23,10 +28,14 @@ export function goToNextSlide(
 export function goToPreviousSlide(
     presentation: Presentation,
     navigate: NavigateFunction,
-    currentSlide: Slide | null
+    currentSlide: Slide | null,
+    setShowPopUp:React.Dispatch<React.SetStateAction<{message:string , isOpen:boolean}>>,
+    handleShake: () => void
 ) {
-    if(!currentSlide && presentation.presentationSlides.length === 0){
-        alert("No Presentation slides yet");
+    if (!currentSlide && presentation.presentationSlides.length === 0) {
+        setShowPopUp({isOpen: true, message: "There is no slide for the current presentation"});
+        handleShake(); // Trigger shaking effect
+        return;
     }
     if (!currentSlide) {
         const prevPage = presentation.presentationSlides.length;

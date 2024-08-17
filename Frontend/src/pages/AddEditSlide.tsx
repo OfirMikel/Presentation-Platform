@@ -14,6 +14,8 @@ function AddEditSlide() {
     let currSlide, edit;
     const navigate = useNavigate();
     const {title} = useParams();
+    const [shake, setShake] = useState(false); // State to control shaking animation
+
     if (!location.state) {
         return <Error/>;
     }
@@ -51,12 +53,16 @@ function AddEditSlide() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        let isOk =  true;
         if (edit) {
-            await alterSlide(slide, title ? title : "", navigate);
+            isOk = await alterSlide(slide, title ? title : "", navigate);
         } else {
-            await addSlide(slide, title ? title : "", navigate);
+            isOk = await addSlide(slide, title ? title : "", navigate);
         }
-        console.log('New Slide:', slide);
+        if (!isOk) {
+            setShake(true);
+            setTimeout(() => setShake(false), 500); // Reset after animation
+        }
     };
 
     const textHeadLineAndButton = edit ? "Edit Slide" : "Create Slide"
@@ -68,7 +74,8 @@ function AddEditSlide() {
             <TextExo2Font
                 className="text-2xl p-5 font-bold text-center">{`${textHeadLineAndButton} in ${title}`}</TextExo2Font>
             <div
-                className="p-10 border border-black laptop:w-1/2 w-4/5 rounded-3xl bg-white drop-shadow-xl">
+                className={`p-10 border border-black laptop:w-1/2 w-4/5 rounded-3xl bg-white drop-shadow-xl 
+                ${shake ? 'animate-shake border-light-red' : ''}`}>
                 <form onSubmit={handleSubmit} className="flex items-center justify-center flex-col gap-5">
                     <input
                         type="text"

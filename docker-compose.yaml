@@ -10,9 +10,7 @@ services:
       - mongo_data:/data/db
 
   api:
-    build:
-      context: .
-      dockerfile: Backend/Dockerfile
+    build: ./Backend
     container_name: express-services
     ports:
       - "3000:3000"
@@ -24,6 +22,7 @@ services:
       - type: bind
         source: .
         target: /app
+
 
 volumes:
   mongo_data:

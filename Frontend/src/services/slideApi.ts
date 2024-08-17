@@ -38,10 +38,9 @@ export async function alterSlide(slide :Slide , title:string , navigate: Navigat
             } else {
                 throw new Error(errorData.error || 'Failed to submit new slide');
             }
-            return;
+            return false;
         }
 
-        alert('Slide Edited successfully!');
         navigate("/");
         return true;
 
@@ -75,10 +74,9 @@ export async function addSlide(slide :Slide , title:string , navigate: NavigateF
             } else {
                 throw new Error(errorData.error || 'Failed to submit new slide');
             }
-            return;
+            return false;
         }
 
-        alert('Slide created successfully!');
         navigate("/")
         return true;
 

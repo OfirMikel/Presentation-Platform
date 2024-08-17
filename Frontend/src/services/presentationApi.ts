@@ -69,20 +69,18 @@ export async function addPresentation(
         if (!res.ok) {
             const errorData = await res.json();
             if (errorData.error) {
-                alert(errorData.error);
+                console.error(errorData.error);
             } else {
                 throw new Error(errorData.error || 'Failed to submit presentation');
             }
-            return;
+            return false;
         }
 
-        alert('Presentation submitted successfully!');
         navigate("/")
         return true;
 
     } catch (error) {
         console.error('Error:', error);
-        alert(error);
         return false;
     }
 }

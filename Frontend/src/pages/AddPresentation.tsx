@@ -1,14 +1,15 @@
-import React, {useState} from 'react';
-import {addPresentation} from "../services/presentationApi.ts";
+import React, { useState } from 'react';
+import { addPresentation } from "../services/presentationApi.ts";
 import Background from "../components/background/Background.tsx";
 import TextExo2Font from "../components/typography/TextExo2Font.tsx";
-import {Presentation} from "../types/presentation.ts";
-import {useNavigate} from "react-router-dom";
+import { Presentation } from "../types/presentation.ts";
+import { useNavigate } from "react-router-dom";
 import ButtonHome from "../components/buttons/ButtonHome.tsx";
 
 function AddPresentation() {
     const [title, setTitle] = useState('');
     const [authorsList, setAuthorsList] = useState<string[]>(['']);
+    const [error, setError] = useState(false); // State to track error
     const navigate = useNavigate();
 
     const handleAuthorChange = (index: number, value: string) => {
@@ -30,8 +31,13 @@ function AddPresentation() {
             SlidesId: [],
             presentationSlides: [],
         };
-        const add = await addPresentation(newPresentation, navigate);
-    }
+        const isAdded = await addPresentation(newPresentation, navigate);
+        if (!isAdded) {
+            setError(true); // Trigger error state
+            setTimeout(() => setError(false), 1000); // Remove error state after 1 second
+        }
+    };
+
     return (
         <Background className="flex items-center flex-col justify-center min-h-dvh gap-5">
             <ButtonHome
@@ -39,8 +45,8 @@ function AddPresentation() {
                  active:opacity-100 duration-200 active:scale-110"/>
             <TextExo2Font className="text-3xl font-bold">Create New Presentation</TextExo2Font>
             <form onSubmit={handleSubmit}
-                  className="bg-white p-16 rounded-3xl items-center justify-center
-                  flex gap-3 flex-col max-w-md mx-auto drop-shadow-5xl">
+                  className={`bg-white p-16 rounded-3xl items-center justify-center flex gap-3 flex-col max-w-md mx-auto drop-shadow-5xl
+                  ${error ? 'animate-shake border-4 border-red-500' : ''} transition-all duration-300`}>
                 <input
                     type="text"
                     value={title}
@@ -80,7 +86,6 @@ function AddPresentation() {
                 </button>
             </form>
         </Background>
-
     );
 }
 
