@@ -7,7 +7,7 @@ import Slide from "../../models/Slide.js";
  * @throws Error If the slide with the specified ID does not exist or if the update operation fails.
  */
 export default async function alterSlide(req, res) {
-    let {presentation, content, style} = req.body;
+    let {presentation, content, style,headline} = req.body;
     const id = req.params.id;
 
     if (!id) {
@@ -24,6 +24,7 @@ export default async function alterSlide(req, res) {
                 presentation: presentation || slideById.presentation,
                 content: content || slideById.content,
                 style: style || slideById.style,
+                headline: headline || slideById.headline
             },
         })
         console.log(`Updated the ${id} slide with the new information`);

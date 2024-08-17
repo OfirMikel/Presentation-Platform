@@ -43,6 +43,7 @@ function SlidePage() {
                         </TextExo2Font>
                     </div>
                     <ButtonAdd
+                        to={`/presentation/${presentation.Title}/add`}
                         className="laptop:absolute laptop:top-7 laptop:right-9 w-16 opacity-40 hover:opacity-80 active:opacity-100 duration-200 active:scale-110"/>
                     <ButtonDelete
                         className="laptop:absolute laptop:top-7 laptop:left-9 w-16 opacity-40 hover:opacity-80 active:opacity-100 duration-200 active:scale-110"/>

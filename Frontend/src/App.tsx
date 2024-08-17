@@ -23,7 +23,7 @@ const router = createBrowserRouter([
             element: <EditSlide/>
         },
         {
-            path: '/presentation/add/:slideId',
+            path: '/presentation/:title/add',
             element: <AddSlide/>
         },
         {

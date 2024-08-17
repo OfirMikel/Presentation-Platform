@@ -30,7 +30,6 @@ function AddPresentation() {
             SlidesId: [],
             presentationSlides: [],
         };
-        console.log(newPresentation);
         const add = await addPresentation(newPresentation, navigate);
     }
     return (

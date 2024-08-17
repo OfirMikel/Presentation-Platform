@@ -1,11 +1,15 @@
-import addSlide from "../routes/post/addSlide.js";
+import addSlide from "./slideMethods/addSlide.js";
+import alterSlide from "./slideMethods/alterSlide.js";
+import deleteSlide from "./slideMethods/deleteSlide.js";
 
 export default {
-    post: async (req, res) => {
+    addSlide: async (req, res) => {
         await addSlide(req, res);
     },
-    put: async (req, res) => {
-        await  a
+    alterSlide: async (req, res) => {
+        await  alterSlide(req,res)
+    },
+    deleteSlide: async (req, res) => {
+        await deleteSlide(req,res);
     }
-
 }

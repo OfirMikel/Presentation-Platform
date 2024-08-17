@@ -10,7 +10,7 @@ import Presentation from "../../models/Presentation.js";
  *
  */
 export default async function addSlide(req, res) {
-    let {presentation, content, style} = req.body;
+    let {presentation, content, style, headline} = req.body;
     if (!presentation) {
         return res.status(400).send("presentation title is required");
     }
@@ -28,12 +28,16 @@ export default async function addSlide(req, res) {
     if (!content) {
         content = "";
     }
+    if(!headline){
+        headline = ""
+    }
     try {
         const newSlide = await Slide.create({
             presentation: presentation,
             content: content,
             style: style,
-            page:slidePresentation.SlidesId.length + 1
+            page:slidePresentation.SlidesId.length + 1,
+            headline: headline,
         });
         await Presentation.updateOne({Title: presentation}, {
             $set: {

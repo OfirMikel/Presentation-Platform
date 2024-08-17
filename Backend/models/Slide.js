@@ -1,14 +1,15 @@
 import mongoose from 'mongoose'
 
 const slideSchema =  new mongoose.Schema({
-    presentation: String,/*The Title of the presentation*/
+    presentation: String,
     content: String,
     style: {
         "fontSize": Number,
         "fontColor": String,
         "fontWeight": String
     },
-    page:Number
+    page:Number,
+    headline: String,
 })
 
 const Slide = mongoose.model('slide', slideSchema);

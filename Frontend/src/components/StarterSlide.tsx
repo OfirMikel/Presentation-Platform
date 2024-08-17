@@ -2,12 +2,10 @@ import React from 'react';
 import TextExo2Font from "./typography/TextExo2Font.tsx";
 import ButtonPrevious from "./buttons/ButtonPrevious.tsx";
 import ButtonAdd from "./buttons/ButtonAdd.tsx";
-import ButtonDelete from "./buttons/ButtonDelete.tsx";
 import ButtonNext from "./buttons/ButtonNext.tsx";
 import ButtonHome from "./buttons/ButtonHome.tsx";
 import Background from "./background/Background.tsx";
 import {Presentation} from "../types/presentation.ts";
-import {Slide} from "../types/slide.ts";
 import {goToNextSlide, goToPreviousSlide} from "./utils/hundleButtons.ts";
 import {useNavigate} from "react-router-dom";
 
@@ -42,6 +40,7 @@ function StarterSlide({presentation}: StarterSlideProps) {
                         )}
                     </div>
                     <ButtonAdd
+                        to={`/presentation/${presentation.Title}/add`}
                         className="laptop:absolute laptop:top-7 laptop:right-9 w-16 opacity-40 hover:opacity-80 active:opacity-100 duration-200 active:scale-110"/>
 
                 </div>

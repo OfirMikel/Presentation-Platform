@@ -68,8 +68,8 @@ export async function addPresentation(
         console.log(res);
         if (!res.ok) {
             const errorData = await res.json();
-            if (errorData.error === "Presentation with this title already exists") {
-                alert('A presentation with this title already exists. Please choose a different title.');
+            if (errorData.error) {
+                alert(errorData.error);
             } else {
                 throw new Error(errorData.error || 'Failed to submit presentation');
             }
