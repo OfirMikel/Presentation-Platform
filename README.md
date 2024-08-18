@@ -46,11 +46,12 @@ updates I have done after receiving the notes in the last interview
 ```
 presentation-platform/
 │
-├── assets/                            # Assets for Readme file
+├── Backend/                           # The Api / Backend of the website
+├── Frontend/                          # The Frontend of the website
 ├── .env                               # Environment variables --only local need to be created when using the project.--
 ├── .gitignore                         # Files git ignores.
 ├── docker-compose.yaml                # Docker compose file
-└── README                             # README file 
+└── README.md                             # README file 
 
 ```
 important files are `routes.js` , and the `js files in get, patch, put and post folders`
