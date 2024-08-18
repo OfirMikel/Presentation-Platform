@@ -1,4 +1,4 @@
-import trashSvg from "../../assets/Trash.svg"
+import trashSvg from "../../assets/trash.svg"
 
 interface ButtonDeleteProps {
     className?: string,

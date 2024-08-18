@@ -57,30 +57,18 @@ presentation-platform/
 │
 ├── assets/                            # Assets for Readme file
 │
+├── controllers/
+│   └── presentationController.js      # Presentation Controller
+│   └── slideController.js             # Slide Controller
+│
 ├── models/
 │   └── Presentation.js                # Presentation model schema
 │   └── Slide.js                       # Slide model schema
 │
 ├── routes/
-│   ├── delete
-│   │   └── deletePresentation.js      # methods for deleting a Presentation
-│   │   └── deleteSlide.js             # methods for deleting a Slide
-│   ├── get
-│   │   └── getAllPresentions.js       # methods for reciving all Presentations
-│   │   └── getPresentationByTitle.js  # methods for reciving a specifc Presentation
-│   ├── patch
-│   │   └── alterAuthors.js            # methods for changing a Presentation list of authors
-│   ├── put
-│   │   └── alterSlide.js              # methods for changing a Slide
-│   ├── post
-│   │   └── addPresentation.js         # methods for creating a new Presentation
-│   │   └── postSlide.js               # methods for creating a new Slide
 │   └── routes.js                      # registering routes for Presentation management
 │
-├── .env                               # Environment variables --only local need to be created when using the project.--
-├── .gitignore                         # Git ignore file
 ├── Dockerfile                         # Dockerfile
-├── docker-compose.yaml                # docker configuration 
 ├── app.js                             # Express app setup
 ├── test.postman_collection.json       # Express app setup
 ├── package.json                       # NPM dependencies and scripts

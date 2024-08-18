@@ -51,7 +51,7 @@ This will start the application on `http://localhost:5173` by default.
 ### Directory Structure
 
 ```
-battle-word/
+Frontend/
 ├── public/             # Static assets
 ├── src/                # Source code
 │   ├── assets/         # Images, fonts, etc.
@@ -66,7 +66,10 @@ battle-word/
 │   ├── vite-env.d.ts   # Vite Environment variables
 │   └── main.tsx        # Entry point
 │   └── index.css       # Css stylesheet 
-└── index.html          # Main HTML file
+├── index.html          # Main HTML file
+└── Dockerfile          # Dockerfile image front
+
+
 ```
 
 ### Scripts
@@ -83,3 +86,7 @@ npm run build
 ```
 The build output will be in the `dist` directory. You can deploy this directory to your web server.
 - Alternatively, use Docker to run the entire project.
+
+### Testing 
+Preformed manual testing and testing using profiler  
+![img.png](images_readme/profiler.png)

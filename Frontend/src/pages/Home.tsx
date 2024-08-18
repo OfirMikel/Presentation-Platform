@@ -26,9 +26,9 @@ function Home() {
                     <div
                         className="laptop:h-[80dvh] laptop:pt-[20dvh] max-laptop:p-12 flex flex-col justify-between items-center laptop:w-1/2 laptop:sticky laptop:top-0 laptop:z-10 p-14">
                         <div>
-                            <TextExo2Font className="font-extrabold text-7xl text-center">Ofir Mikel</TextExo2Font>
-                            <TextExo2Font className="font-light text-xl text-center">Presentation
+                            <TextExo2Font className="font-extrabold text-7xl text-center">Presentation
                                 Platform</TextExo2Font>
+                            <TextExo2Font className="font-light text-xl text-center">Ofir Mikel</TextExo2Font>
                         </div>
                         <ButtonNewPresentation to={`/new_presentation`}/>
                     </div>
