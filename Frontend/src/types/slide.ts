@@ -1,3 +1,6 @@
+/**
+ * Slide type
+ */
 export interface Slide {
     _id: string,
     presentation: string | undefined,

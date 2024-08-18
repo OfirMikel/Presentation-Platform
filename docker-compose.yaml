@@ -13,16 +13,29 @@ services:
     build: ./Backend
     container_name: express-services
     ports:
-      - "3000:3000"
+      - "5000:5000"  # Backend port
     depends_on:
       - mongo
     env_file:
       - .env
     volumes:
       - type: bind
-        source: .
+        source: ./Backend
         target: /app
 
+  frontend:
+    build: ./Frontend
+    container_name: vite-react-app
+    ports:
+      - "3000:3000"  # Frontend port
+    depends_on:
+      - api
+    env_file:
+      - .env
+    volumes:
+      - type: bind
+        source: ./Frontend
+        target: /app
 
 volumes:
   mongo_data:

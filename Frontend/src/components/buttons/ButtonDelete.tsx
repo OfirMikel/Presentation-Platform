@@ -5,6 +5,11 @@ interface ButtonDeleteProps {
     onClick?: () => void
 }
 
+/**
+ * A delete circular button - has a trash icon in the middle
+ * @param className styling classes
+ * @param onClick on click method for the button
+ */
 function DeleteButton({className , onClick}: ButtonDeleteProps) {
     return (
         <div className="cursor-pointer" onClick={onClick}>

@@ -7,6 +7,9 @@ import AddPresentation from "./pages/AddPresentation.tsx";
 import React from "react";
 import AddEditSlide from "./pages/AddEditSlide.tsx";
 
+/**
+ * router for the app with loader and errors
+ */
 const router = createBrowserRouter([
         {
             path: '/',
@@ -29,6 +32,10 @@ const router = createBrowserRouter([
     ]
 );
 
+/**
+ * The App function - used with router context api for react router dom
+ * @constructor
+ */
 function App() {
     return (
         <RouterProvider router={router}/>

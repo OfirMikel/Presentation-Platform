@@ -14,6 +14,11 @@ interface StarterSlideProps {
     presentation: Presentation;
 }
 
+/**
+ * Show opening slide for presentation - the Author ,  Date and Title
+ * @param presentation
+ * @constructor
+ */
 function StarterSlide({presentation}: StarterSlideProps) {
     const [isShaking, setIsShaking] = useState(false);
     const Authors = presentation.AuthorsList;

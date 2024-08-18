@@ -1,6 +1,9 @@
 import React from 'react';
 import Background from "./background/Background.tsx";
 
+/**
+ * Simple spinner to indicate loading state
+ */
 function Spinner() {
     return (
         <Background className="flex items-center justify-center ">

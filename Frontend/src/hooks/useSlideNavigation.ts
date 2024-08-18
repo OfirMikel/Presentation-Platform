@@ -12,6 +12,11 @@ interface UseSlideNavigation {
     setPresentation: React.Dispatch<React.SetStateAction<Presentation | null>>;
 }
 
+/**
+ * React Custom Hook for the slide navigation allow to manage the slide carousel easier
+ * implemented optimization so that only when there is presentation that was given from the
+ * home page no need to call the server again
+ */
 export function useSlideNavigation(): UseSlideNavigation {
     const { title, page } = useParams<{ title: string; page: string }>();
     const [presentation, setPresentation] = useState<Presentation | null>(null);

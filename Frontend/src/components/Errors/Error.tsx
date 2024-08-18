@@ -4,6 +4,10 @@ import Background from "../background/Background.tsx";
 import TextExo2Font from "../typography/TextExo2Font.tsx";
 import image from "../../assets/computer.png"
 
+/**
+ * A simple error screen for page not found or undefined error
+ * @constructor
+ */
 function Error() {
     return (
         <Background className="flex items-center justify-center">

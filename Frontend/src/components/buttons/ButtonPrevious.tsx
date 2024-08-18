@@ -7,7 +7,11 @@ interface ButtonArrowLeftProps {
     onClick?: () => void
 
 }
-
+/**
+ * A previous circular button - has icon in the middle
+ * @param className styling classes
+ * @param onClick on click method for the button
+ */
 function ButtonPrevious({className , onClick}: ButtonArrowLeftProps) {
     return (
         <div className="cursor-pointer " onClick={onClick}>

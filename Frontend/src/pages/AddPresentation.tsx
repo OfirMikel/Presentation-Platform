@@ -6,6 +6,10 @@ import { Presentation } from "../types/presentation.ts";
 import { useNavigate } from "react-router-dom";
 import ButtonHome from "../components/buttons/ButtonHome.tsx";
 
+/**
+ * The add presentation allow to create presentation
+ * @constructor
+ */
 function AddPresentation() {
     const [title, setTitle] = useState('');
     const [authorsList, setAuthorsList] = useState<string[]>(['']);

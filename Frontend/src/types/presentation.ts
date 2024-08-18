@@ -1,5 +1,8 @@
 import {Slide} from "./slide.ts";
 
+/**
+ * Presentation type
+ */
 export interface Presentation{
     id?: string,
     Title: string,

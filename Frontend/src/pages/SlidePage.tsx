@@ -15,7 +15,10 @@ import ButtonAlter from "../components/buttons/ButtonAlter.tsx";
 import React, {useState} from "react";
 import PopUp from "../components/PopUp.tsx";
 
-
+/**
+ * A slide page show all the information of a specific file
+ * @constructor
+ */
 function SlidePage() {
     const {currentSlide, presentation, loading, error, setPresentation} = useSlideNavigation();
     const navigate = useNavigate();

@@ -3,6 +3,14 @@ import {Presentation} from "../types/presentation.ts";
 import {Slide} from "../types/slide.ts";
 import {deleteSlide} from "../services/slideApi.ts"; // Update paths accordingly
 
+/**
+ * Handle button clicked method that go to next slide
+ * @param presentation the current presentation
+ * @param navigate navigation function
+ * @param currentSlide the current slide
+ * @param setShowPopUp pop up set method (react set method)
+ * @param handleShake function to set shaking if error occur
+ */
 export function goToNextSlide(
     presentation: Presentation,
     navigate: NavigateFunction,
@@ -25,6 +33,14 @@ export function goToNextSlide(
     navigate(`/presentation/${presentation.Title}/${nextPage}`, {state: {presentation}});
 }
 
+/**
+ * Handle button clicked method that go to previous slide
+ * @param presentation the current presentation
+ * @param navigate navigation function
+ * @param currentSlide the current slide
+ * @param setShowPopUp pop up set method (react set method)
+ * @param handleShake function to set shaking if error occur
+ */
 export function goToPreviousSlide(
     presentation: Presentation,
     navigate: NavigateFunction,

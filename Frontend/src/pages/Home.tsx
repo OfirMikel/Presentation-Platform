@@ -6,6 +6,9 @@ import {useLoaderData, useNavigation} from "react-router-dom";
 import ButtonNewPresentation from "../components/buttons/ButtonNewPresentation.tsx";
 import Spinner from "../components/Spinner.tsx";
 
+/**
+ * Home page for the application show all presentation
+ */
 function Home() {
     const presentationTemplates = useLoaderData() as Presentation[];
     const navigation = useNavigation();

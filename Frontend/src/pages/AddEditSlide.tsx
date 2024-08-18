@@ -8,7 +8,10 @@ import Error from "../components/Errors/Error.tsx";
 import ButtonHome from "../components/buttons/ButtonHome.tsx";
 import {addSlide, alterSlide} from "../services/slideApi.ts";
 
-
+/**
+ * The add edit slide allow to change or create slide
+ * @constructor
+ */
 function AddEditSlide() {
     const location = useLocation();
     let currSlide, edit;

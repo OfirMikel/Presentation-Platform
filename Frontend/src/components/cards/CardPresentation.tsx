@@ -9,6 +9,10 @@ interface CardPresentationProps {
     presentation: Presentation;
 }
 
+/**
+ * The card for the home page show a specific presentation organised in card
+ * @param presentation the presentation
+ */
 function CardPresentation({presentation}: CardPresentationProps) {
     const formatedDate = new Date(presentation.DatePublished).toLocaleDateString('en-GB', {
         day: '2-digit',

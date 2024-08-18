@@ -1,9 +1,11 @@
 import {Presentation} from "../types/presentation.ts";
 import {NavigateFunction} from "react-router-dom";
 
-const base_url = "http://localhost:3000";
+const base_url = import.meta.env.VITE_BASE_URL;
 
-
+/**
+ * Get all presentation from the server
+ */
 export async function getAllPresentations() {
     try {
         var requestOptions = {
@@ -11,7 +13,6 @@ export async function getAllPresentations() {
         };
 
         const res = await fetch(`${base_url}/presentations`, requestOptions);
-        console.log(res)
         if (!res.ok) {
             const errorText = await res.text();
             throw new Error(`Error ${res.status}: ${errorText}`);
@@ -28,6 +29,10 @@ export async function getAllPresentations() {
     }
 }
 
+/**
+ * Get specific presentation from the api by title
+ * @param title the title for the presentation
+ */
 export async function getPresentation(title: string) {
     try {
         var requestOptions = {
@@ -51,6 +56,11 @@ export async function getPresentation(title: string) {
 
 }
 
+/**
+ * Adding presentation using the api
+ * @param newPresentation the new presentation that need to be added
+ * @param navigate navigation function
+ */
 export async function addPresentation(
                                       newPresentation: Presentation,
                                       navigate: NavigateFunction) {
@@ -85,6 +95,11 @@ export async function addPresentation(
     }
 }
 
+/**
+ * Delete presentation using the api
+ * @param presentation the presentation need to be deleted
+ * @param navigate navigation function
+ * */
 export async function deletePresentation(presentation: Presentation , navigate: NavigateFunction) {
     try {
         const response = await fetch(`${base_url}/presentation/${presentation.Title}`, {

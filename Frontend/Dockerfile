@@ -1,26 +1,20 @@
-# Step 1: Build the React app
-FROM node:18 AS build
+# Use the official Node.js image as a base
+FROM node:18
 
+# Set the working directory
 WORKDIR /app
 
-# Install dependencies
+# Copy package.json and package-lock.json first
 COPY package*.json ./
+
+# Install dependencies
 RUN npm install
 
-# Copy the source code
+# Copy the rest of the application code
 COPY . .
 
-# Build the app
-RUN npm run build
+# Expose the port that Vite uses (default is 3000)
+EXPOSE 3000
 
-# Step 2: Serve the app with a lightweight web server
-FROM nginx:alpine
-
-# Copy the build output to the nginx html directory
-COPY --from=build /app/dist /usr/share/nginx/html
-
-# Expose port 80
-EXPOSE 80
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Start the Vite development server
+CMD ["npm", "run", "dev"]

@@ -4,6 +4,10 @@ import Background from "../background/Background.tsx";
 import TextExo2Font from "../typography/TextExo2Font.tsx";
 import image from "../../assets/computer.png"
 
+/**
+ * A simple error screen for page were the specific error is known
+ * @param error the error message
+ */
 function ErrorSlide({error} : {error: string}) {
     return (
         <Background className="flex items-center justify-center">

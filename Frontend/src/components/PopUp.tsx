@@ -6,6 +6,11 @@ interface PopUpProps {
     onClose: () => void;
 }
 
+/**
+ * A popup component that show a simple message for 1.5s
+ * @param message the text need to be shown
+ * @param onClose method to close the popup
+ */
 function PopUp({ message, onClose }: PopUpProps) {
     useEffect(() => {
         const timer = setTimeout(() => {
