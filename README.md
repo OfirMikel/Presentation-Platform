@@ -1,9 +1,11 @@
 # Presentation Platform
 ![PresentationPlatform.gif](PresentationPlatform.gif)
 
+
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Updates](#updates)
 - [Features](#features)
 - [Technologies](#technologies)
 - [File Structure](#file-structure)
@@ -13,7 +15,16 @@
 
 ## Introduction
 
-A Home Assignment given, creating a Server-Side Service for Presentation Platform.
+A Home Assignment given, creating a Backend and Frontend for Presentation Platform.
+## Updates
+updates I have done after receiving the notes in the last interview
+### Backend:
+- implemented mvc for best practice use
+- created a list of slide ids inside presentation for the method get presentation by title
+- add page to slide object
+- add headline to slide object
+
+## Table of Contents
 
 ## Features
 - Creating a Presentation
