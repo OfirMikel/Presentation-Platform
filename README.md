@@ -51,7 +51,7 @@ presentation-platform/
 ├── .env                               # Environment variables --only local need to be created when using the project.--
 ├── .gitignore                         # Files git ignores.
 ├── docker-compose.yaml                # Docker compose file
-└── README.md                             # README file 
+└── README.md                          # README file 
 
 ```
 important files are `routes.js` , and the `js files in get, patch, put and post folders`
@@ -86,8 +86,8 @@ important files are `routes.js` , and the `js files in get, patch, put and post 
 
 - The Frontend will be available at `http://localhost:3000`.
 
-#### There might be a problem with @rollup/rollup-linux-x64-gnu when using windows this is why I suggest creating the frontend locally for development instead of in the docker
-more information about the rollup bug can be found in those links:
+#### There may be an issue with @rollup when using Docker on Windows, which is why I recommend building the frontend locally for development instead of within Docker.
+More information about the Rollup bug can be found in the following links:
 - https://answers.netlify.com/t/react-vite-build-fails-because-of-rollup-rollup-linux-x64-gnu/107504
 - https://github.com/vitejs/vite/discussions/15532
 
