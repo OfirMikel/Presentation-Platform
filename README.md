@@ -23,23 +23,6 @@ A Home Assignment given, creating a Server-Side Service for Presentation Platfor
 - Deleting a Slide
 - Deleting Presentation
 
-## Objects
-
-- **Presentation obj contains:** 
-  - id(unique) 
-  - title(unique) 
-  - authorsList 
-  - datePublished
-- **Slide obj contains:** 
-  - id(unique)
-  - presentation 
-  - content  
-  - style(style is an object).
-- **style obj contains:** 
-  - fontSize 
-  - fontColor 
-  - fontWeight 
-
 ## Technologies
 
 - **Node.js**: JavaScript runtime
@@ -88,6 +71,16 @@ important files are `routes.js` , and the `js files in get, patch, put and post 
 - MongoDB will be available at `mongodb://mongo:27017/yourdbname`.
 
 - The API will be available at `http://localhost:5000`.
+
+- The Frontend will be available at `http://localhost:3000`.
+
+#### There might be a problem with @rollup/rollup-linux-x64-gnu when using windows this is why I suggest creating the frontend locally for development instead of in the docker
+more information about the rollup bug can be found in those links:
+- https://answers.netlify.com/t/react-vite-build-fails-because-of-rollup-rollup-linux-x64-gnu/107504
+- https://github.com/vitejs/vite/discussions/15532
+
+
+
 
 ### Manual Installation
 
@@ -140,5 +133,5 @@ Disclaimer **yourdbname** is the db name that u should provide
 ### Presentation of the website
 ![PresentationPlatform.gif](PresentationPlatform.gif)
 - more information about the design can be found in the readme file inside Frontend
-## Error Handling
+### More information about the Frontend and the Backend can be found in their own readme inside the Frontend and Backend folders
 
