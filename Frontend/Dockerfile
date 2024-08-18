@@ -1,10 +1,11 @@
-FROM node:18
+# Build stage
+FROM node:18 AS build
 
 WORKDIR /app
 
-COPY package.json .
+COPY package*.json ./
 
-RUN npm install
+RUN npm install --platform=linux --arch=x64
 
 COPY . .
 
